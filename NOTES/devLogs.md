@@ -117,9 +117,9 @@ We want a basic styling to show where the game is located on the screen. We don'
 
 The `player` will move in a 'world' that consists of a fixed size grid.
 
-- [ ] Add general background to canvas (to show where grid ends)
-- [ ] Load the actual tiles as Sprites
-- [ ] Add the tiles as a grid to the canvas (e.g., 5 x 5)
+- [x] Add general background to canvas (to show where grid ends)
+- [x] Load the actual tiles as Sprites
+- [x] Add the tiles as a grid to the canvas (e.g., 5 x 5)
 - [ ] Add boundaries so that a player would not be able to fall/move off grid
 
 ## Player

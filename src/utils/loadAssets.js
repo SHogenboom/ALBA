@@ -21,6 +21,30 @@ export async function loadAssets(k) {
     },
   });
 
+  // TILES
+  let tileSize = 64; // size of the tiles in the spritesheet
+
+  k.loadSpriteAtlas("tiles.png", {
+    gridTop: {
+      x: tileSize * 6, // fifth element
+      y: 0,
+      width: tileSize,
+      height: tileSize,
+    },
+    gridBottom: {
+      x: tileSize * 2, // third element
+      y: 0,
+      width: tileSize,
+      height: tileSize,
+    },
+    gridCenter: {
+      x: tileSize * 0, // first element
+      y: 0,
+      width: tileSize,
+      height: tileSize,
+    },
+  });
+
   // CODE BLOCKS
   let originalSize = 376; // see the original assets - before having combined them into a spritesheet
   let newSize = originalSize / 2; // To create the spritesheet we scaled the original assets down to 50% of their original size

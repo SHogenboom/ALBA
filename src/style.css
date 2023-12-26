@@ -1,0 +1,12 @@
+body {
+  background-color: rgba(13, 33, 41, 1); /* dark turquoise blue */
+}
+/* center game (horizontally) and slightly below top (vertically) */
+#game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}

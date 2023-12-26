@@ -37,7 +37,7 @@ _note_: there is no need to commit the `node_modules` directory to version contr
 
 ## Production Dependencies
 
-The dependencies mentioned above are only used during developement. We further add the following dependencies which are used in production:
+The dependencies mentioned above are only used during development. We further add the following dependencies which are used in production:
 By using the `--save` flag, the dependency is added to the `package.json` file as a regular/deployable dependency.
 
 ```bash
@@ -51,3 +51,7 @@ npm install lodash kaboom --save
 
 We created three configuration file for `webpack` which will tell it how to process our files.
 The first file is `webpack.common.js` which contains the configuration that is shared between development and production. The `dev` and `prod` files contain the configuration specific to each environment.
+
+## DuckDuckGo
+
+It is unclear to me why I cannot get the basic code - with a regular kaboom import - to work in DuckDuckGo. This produces a syntax error which is not present when opening the dev server in Chrome. The syntax error also does not happen when importing other npm packages such as `lodash` and `jspsych`.

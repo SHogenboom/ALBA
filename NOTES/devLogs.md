@@ -54,4 +54,12 @@ The first file is `webpack.common.js` which contains the configuration that is s
 
 ## DuckDuckGo
 
-It is unclear to me why I cannot get the basic code - with a regular kaboom import - to work in DuckDuckGo. This produces a syntax error which is not present when opening the dev server in Chrome. The syntax error also does not happen when importing other npm packages such as `lodash` and `jspsych`.
+When setting up this project I encountered a problem where the `webpack` bundle resulted in a syntax error when loading the `kaboom` library and opening the code in `DuckDuckGo`. The same error did not occur in `Chrome` and `Safari`. I opened a [GitHub issue](https://github.com/replit/kaboom/issues/812) to detail the occurrence:
+
+- The error occurs in DuckDuckGo browser, not in Chrome and Safari
+- The error occurs when using npm / webpack bundling
+- The error occurs when using <script src="https://unpkg.com/kaboom@3000.1.0/dist/kaboom.js"></script>
+- The error occurs irrespective of using the .js or .mjs bundles
+- The error does not occur in versions prior to 3000.1.0 (e.g., [3000.0.15](https://www.npmjs.com/package/kaboom/v/3000.0.15) does not produce the syntax error)
+
+So for now the solution has been to install a specific version of `kaboom`: `npm install kaboom@3000.0.15 --save` which does not produce the syntax error.

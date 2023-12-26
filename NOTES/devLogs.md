@@ -98,3 +98,40 @@ We have refrained from loading `kaboom` as a global variable/context. This is be
 - Use `await` functions to ensure that, for example the map.json file, is fully loaded before continuing.
 - Cannot use `hex` colors together with k contexts (https://youtu.be/pVAmEJqK-3A)
 - How to use `Tiled` together with Kaboom (https://youtu.be/pVAmEJqK-3A)
+
+# Pseudo Implementation
+
+## Styling
+
+We want a basic styling to show where the game is located on the screen. We don't use a fullscreen setup so that it will be easier / more logical to add other elements to the page (e.g., a menu, etc.).
+
+- [x] Ensure the game is shown in the middle of the screen
+- [x] Visualize where the game context is (e.g., with a background color)
+- [ ] Use custom font (because it is a canvas element this cannot be done through `css` styling)
+
+## World
+
+The `player` will move in a 'world' that consists of a fixed size grid.
+
+- [ ] Add general background to canvas (to show where grid ends)
+- [ ] Load the actual tiles as Sprites
+- [ ] Add the tiles as a grid to the canvas (e.g., 5 x 5)
+- [ ] Add boundaries so that a player would not be able to fall/move off grid
+
+## Player
+
+We start of with a boat, this doesn't really require any elaborate animations - though we want this to be added in the future.
+
+- [ ] Load the player sprite (boat)
+- [ ] Add the player to the canvas
+- [ ] Add a basic animation
+- [ ] Prevent the player from moving off grid
+
+## Assets
+
+- [ ] Combine all assets (world tiles, player) to a spritesheet
+
+## Buttons
+
+- [ ] Add buttons to the canvas (e.g., to move the player)
+- [ ] Show 'code' editor

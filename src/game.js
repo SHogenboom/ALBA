@@ -1,6 +1,7 @@
 // IMPORTS
 import kaboom from "kaboom"; // javascript library for making games
 import "./style.css"; // custom styling
+import { loadAssets } from "./utils/loadAssets.js"; // load sprites
 
 // GLOBAL VARIABLES
 // 540 x 960 pixels, 16:9 ratio
@@ -15,21 +16,9 @@ const k = kaboom({
   global: false,
 });
 
-// CREATE PLAYER
-k.loadSprite("player", "boat.png", {
-  sliceX: 10,
-  sliceY: 1,
-  anims: {
-    idle: {
-      from: 0,
-      to: 0,
-    },
-    move: {
-      from: 1,
-      to: 8,
-    },
-  },
-});
+// LOAD ASSETS
+// wait for assets to load before continuing
+await loadAssets(k);
 
 let player = k.add([
   k.sprite("player"), // load the player assets (defined in loadSprites)

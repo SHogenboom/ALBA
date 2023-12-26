@@ -1,7 +1,8 @@
 // IMPORTS
 import kaboom from "kaboom"; // javascript library for making games
 import "./style.css"; // custom styling
-import { loadAssets } from "./utils/loadAssets.js"; // load sprites
+import { loadAssets } from "./utils/loadAssets.js"; // load assets (sprites, fonts etc)
+import { makePlayer } from "./entities/player.js"; // create player entity
 
 // GLOBAL VARIABLES
 // 540 x 960 pixels, 16:9 ratio
@@ -14,18 +15,13 @@ const k = kaboom({
   height: gameHeight,
   canvas: document.querySelector("#game"),
   global: false,
+  debug: true,
 });
 
 // LOAD ASSETS
 // wait for assets to load before continuing
 await loadAssets(k);
 
-let player = k.add([
-  k.sprite("player"), // load the player assets (defined in loadSprites)
-  k.pos(k.center()), // place in middle of screen
-  k.area(), // add area to the image so we can use it for collision detection
-  k.anchor("center"), // define position from center of image
-  k.scale(0.5), // scale image down to 50% to fit in grid tiles
-]);
-
+// CREATE PLAYER
+let player = k.add(makePlayer(k));
 player.play("move", { loop: true });

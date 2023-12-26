@@ -23,9 +23,9 @@ export function makeGrid(k, gridWidth, gridHeight) {
   // Correspond to names given in `loadAssets.js`
   // Define as object with functions so it can be used in `k.addLevel()`
   let symbols = {
-    "^": () => [k.sprite("gridTop")],
-    "-": () => [k.sprite("gridCenter")],
-    v: () => [k.sprite("gridBottom")],
+    "^": () => [k.sprite("gridTop"), k.anchor("center")], // define position from center of image],
+    "-": () => [k.sprite("gridCenter"), k.anchor("center")], // define position from center of image],
+    v: () => [k.sprite("gridBottom"), k.anchor("center")], // define position from center of image],
   };
 
   return { layout: gridLayout, tiles: symbols };

@@ -4,11 +4,17 @@ import "./style.css"; // custom styling
 import { loadAssets } from "./utils/loadAssets.js"; // load assets (sprites, fonts etc)
 import { makePlayer } from "./entities/player.js"; // create player entity
 import { makeGrid } from "./entities/grid.js";
+import { showGridIndices } from "./utils/showGridIndices.js";
 
 // GLOBAL VARIABLES
 // 540 x 960 pixels, 16:9 ratio
 const gameWidth = 960;
 const gameHeight = 540;
+const gridWidth = 5;
+const gridHeight = 5;
+const tileSize = 64;
+const startX = 2;
+const startY = 4;
 
 // CREATE GAME
 const k = kaboom({
@@ -28,17 +34,23 @@ const k = kaboom({
 await loadAssets(k);
 
 // CREATE PLAYER
-let player = k.add(makePlayer(k));
-player.play("move", { loop: true });
+// let player = k.add(makePlayer(k));
+// player.play("move", { loop: true });
 
 // CREATE GRID
-let grid = makeGrid(k, 5, 5);
-k.addLevel(grid.layout, {
+let grid = makeGrid(k, gridWidth, gridHeight);
+const gridLevel = k.addLevel(grid.layout, {
   // Size of the tiles
-  tileWidth: 64,
-  tileHeight: 64,
+  tileWidth: tileSize,
+  tileHeight: tileSize,
   // Position relative to top-left corner of the canvas
-  pos: k.vec2(25, 25),
+  pos: k.vec2(tileSize, tileSize),
   // Map ASCII symbols to sprites
   tiles: grid.tiles,
 });
+
+// player.pos.x = startX * tileSize;
+// player.pos.y = startY * tileSize;
+// player.z = 1;
+
+showGridIndices(k, gridWidth, gridHeight, tileSize);

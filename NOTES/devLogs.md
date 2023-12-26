@@ -137,5 +137,6 @@ We start of with a boat, this doesn't really require any elaborate animations - 
 
 ## Buttons
 
+- [x] Load buttons as sprites
 - [ ] Add buttons to the canvas (e.g., to move the player)
 - [ ] Show 'code' editor

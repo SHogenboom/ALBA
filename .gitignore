@@ -1,2 +1,5 @@
 node_modules/
 .vscode
+
+// All assets are converted to spritesheets
+assets/originals/

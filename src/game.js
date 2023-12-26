@@ -18,6 +18,9 @@ const k = kaboom({
   debug: true,
 });
 
+// enter inspect mode
+k.debug.inspect = true;
+
 // LOAD ASSETS
 // wait for assets to load before continuing
 await loadAssets(k);

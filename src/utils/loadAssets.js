@@ -20,4 +20,23 @@ export async function loadAssets(k) {
       },
     },
   });
+
+  // CODE BLOCKS
+  let originalSize = 376; // see the original assets - before having combined them into a spritesheet
+  let newSize = originalSize / 2; // To create the spritesheet we scaled the original assets down to 50% of their original size
+  let codeBlocks = ["down", "left", "right", "up"]; // the order in which the code blocks appear in the spritesheet
+
+  // LOOP over the elements of the codeblocks (stringed indices) to create the different sprites.
+  for (let codeBlockIndex in codeBlocks) {
+    k.loadSpriteAtlas("codeblocks.png", {
+      // Assign the value name equal to the element of the codeblocks array (e.g., "left")
+      [codeBlocks[codeBlockIndex]]: {
+        // The indices are strings, convert to numbers to use in calculations
+        x: Number(codeBlockIndex) * originalSize, // determine where the sprite starts in the spritesheet
+        y: 0, // spritesheet only has one row, so y is always 0
+        width: newSize, // all codeblocks have the same size
+        height: newSize,
+      },
+    });
+  }
 }

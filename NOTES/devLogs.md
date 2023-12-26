@@ -69,7 +69,7 @@ _note_: there is no need to commit the `node_modules` directory to version contr
 
 #### Configuration
 
-The `webpack` configuration consists of three files. This setup is based on the [NetNinja Webpack & Typescript Tutorial](https://www.youtube.com/watch?v=3On5Z0gjf4U&list=PL4cUxeGkcC9hOkGbwzgYFmaxB0WiduYJC&index=2), the [Webpack Guides](https://webpack.js.org/guides/), and the [Oding Project materials](https://www.theodinproject.com/lessons/node-path-javascript-restaurant-page).
+The `webpack` configuration consists of three files. This setup is based on the [NetNinja Webpack & Typescript Tutorial](https://www.youtube.com/watch?v=3On5Z0gjf4U&list=PL4cUxeGkcC9hOkGbwzgYFmaxB0WiduYJC&index=2), the [Webpack Guides](https://webpack.js.org/guides/), and the [Odin Project materials](https://www.theodinproject.com/lessons/node-path-javascript-restaurant-page).
 
 1. `webpack.common.js`: contains the configuration that is shared between development and production. For example how `.css`` files should be processed and how assets should be copied.
 2. `webpack.dev.js`: contains the configuration specific to development. For example where the development server should run.
@@ -79,7 +79,7 @@ The `webpack` configuration consists of three files. This setup is based on the 
 
 ### Version
 
-When setting up this project I encountered a problem where the `webpack` bundle resulted in a syntax error as soon as I loadded the `kaboom` library. This error occurred specifically when running/serving the code in `DuckDuckGo`, it did _not_ occur when running the code in `Chrome` or `Safari`. I created a [GitHub issue](https://github.com/replit/kaboom/issues/812) to detail the occurrence:
+When setting up this project I encountered a problem where the `webpack` bundle resulted in a syntax error as soon as I loaded the `kaboom` library. This error occurred specifically when running/serving the code in `DuckDuckGo`, it did _not_ occur when running the code in `Chrome` or `Safari`. I created a [GitHub issue](https://github.com/replit/kaboom/issues/812) to detail the occurrence:
 
 - The error occurs in DuckDuckGo browser, not in Chrome and Safari
 - The error occurs when using npm / webpack bundling
@@ -91,13 +91,17 @@ So for now the solution has been to install a specific version of `kaboom`: `npm
 
 ### Context
 
-We have refrained from loading `kaboom` as a global variable/context. This is because it becomes diffifult to read the code and determine which functions belong to `kaboom`, `Vanilla JS` or future other frameworks. This was suggested in the following [tutorial](https://youtu.be/pVAmEJqK-3A)
+We have refrained from loading `kaboom` as a global variable/context. This is because it becomes difficult to read the code and determine which functions belong to `kaboom`, `Vanilla JS` or future other frameworks. This was suggested in the following [tutorial](https://youtu.be/pVAmEJqK-3A)
 
 # Tricks / Sources
 
 - Use `await` functions to ensure that, for example the map.json file, is fully loaded before continuing.
 - Cannot use `hex` colors together with k contexts (https://youtu.be/pVAmEJqK-3A)
 - How to use `Tiled` together with Kaboom (https://youtu.be/pVAmEJqK-3A)
+
+# Assets
+
+Downloaded assets from [Olga's Lab](https://www.olgaslab.com/graphics/viewgraphic.php/2D-Huge-underwater-themed-bundle/w1f4h8d7/). The assets are available for commercial use. The assets come in individual `.png` files and were combined to spritesheets using [Texturepacker](https://www.codeandweb.com/texturepacker/download/7.1.0/mac-64). Please note that there are many more animation frames than strictly necessary. For example, the submarine was reduced from 30 frames to 8.
 
 # Pseudo Implementation
 
@@ -122,9 +126,9 @@ The `player` will move in a 'world' that consists of a fixed size grid.
 
 We start of with a boat, this doesn't really require any elaborate animations - though we want this to be added in the future.
 
-- [ ] Load the player sprite (boat)
-- [ ] Add the player to the canvas
-- [ ] Add a basic animation
+- [x] Load the player sprite (boat)
+- [x] Add the player to the canvas
+- [x] Add a basic animation
 - [ ] Prevent the player from moving off grid
 
 ## Assets

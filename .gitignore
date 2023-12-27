@@ -3,3 +3,4 @@ node_modules/
 
 // All assets are converted to spritesheets
 assets/originals/
+src/tmp.js

@@ -1,11 +1,13 @@
 // GOAL
 // Add small greyed-out texts to the grid to indicate the x and y indices of the tiles.
 
-export function showGridIndices(k, gridWidth, gridHeight, tileSize) {
-  for (let x = 1; x <= gridWidth; x++) {
-    for (let y = 1; y <= gridHeight; y++) {
+import { GAME } from "./params.js";
+
+export function showGridIndices(k) {
+  for (let x = 1; x <= GAME.gridWidth; x++) {
+    for (let y = 1; y <= GAME.gridHeight; y++) {
       k.add([
-        k.pos(k.vec2(x * tileSize, y * tileSize)),
+        k.pos(k.vec2(x * GAME.tileSize, y * GAME.tileSize)),
         k.text(`x:${x}\ny:${y}`, {
           size: 14,
           align: "center",

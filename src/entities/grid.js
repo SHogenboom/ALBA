@@ -1,23 +1,25 @@
-export function makeGrid(k, gridWidth, gridHeight) {
+import { GAME } from "../utils/params.js";
+
+export function makeGrid(k) {
   // INITIALIZE
   let gridLayout = [];
 
   // DEFINE: top row
   // Always the same symbol ("^")
-  // One row with "^" repeated gridWidth times
-  gridLayout.push("^".repeat(gridWidth));
+  // One row with "^" repeated GAME.gridWidth times
+  gridLayout.push("^".repeat(GAME.gridWidth));
 
   // DEFINE: middle rows
   // Always the same symbol ("-")
-  // gridHeight - 2 rows with "-" repeated gridWidth times
-  for (let i = 0; i < gridHeight - 2; i++) {
-    gridLayout.push("-".repeat(gridWidth));
+  // GAME.gridHeight - 2 rows with "-" repeated GAME.gridWidth times
+  for (let i = 0; i < GAME.gridHeight - 2; i++) {
+    gridLayout.push("-".repeat(GAME.gridWidth));
   }
 
   // DEFINE: bottom row
   // Always the same symbol ("v")
-  // One row with "v" repeated gridWidth times
-  gridLayout.push("v".repeat(gridWidth));
+  // One row with "v" repeated GAME.gridWidth times
+  gridLayout.push("v".repeat(GAME.gridWidth));
 
   // DEFINE MEANING OF SYMBOLS TO BE USED IN THE GRID
   // Correspond to names given in `loadAssets.js`

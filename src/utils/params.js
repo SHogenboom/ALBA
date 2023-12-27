@@ -3,9 +3,17 @@
 
 // GAME
 // Dimensions were extracted from 'Rekentuin';
+
+// GLOBAL VARIABLES
 export const GAME = {
   width: 1000,
   height: 550,
+  gridWidth: 5, // keep as two separate variables for easier looping.
+  gridHeight: 5,
+  tileSize: 64,
+  playerStart: [2, 4], // [x, y]
+  playerFinish: [4, 2], // [x, y]
+  mode: "DEV", // DEV or PROD
 };
 
 // LAYERS

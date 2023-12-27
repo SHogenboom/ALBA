@@ -1,11 +1,15 @@
 // IMPORTS
 import kaboom from "kaboom"; // javascript library for making games
 import "./style.css"; // custom styling
+// UTILITIES
 import { GAME, UI } from "./utils/params.js"; // game parameters
 import { loadAssets } from "./utils/loadAssets.js"; // load assets (sprites, fonts etc)
 import { convertGridToCanvasPos } from "./utils/convertToCanvasPos.js"; // convert grid coordinates to canvas position
+// ENTITIES
 import { makePlayer } from "./entities/player.js"; // create player entity
+import { makeFinish } from "./entities/finish.js";
 import { makeGrid } from "./entities/grid.js";
+// DEVELOPMENT
 import { showGridIndices } from "./utils/showGridIndices.js";
 import { showUI } from "./utils/showUI.js";
 
@@ -42,6 +46,13 @@ let player = k.add(makePlayer(k)); // initialize, but does not show yet
 player.pos = convertGridToCanvasPos(GAME.playerStartX, GAME.playerStartY, grid); // place on correct grid tile
 player.play("move", { loop: true }); // start animation
 player.z = UI.gridElements; // ensure plotted on top of grid.
+player.flipX = GAME.finishX >= GAME.playerStartX; // face the player to the finish
+
+// CREATE FINISH
+let finish = k.add(makeFinish(k)); // initialize, but does not show yet
+finish.pos = convertGridToCanvasPos(GAME.finishX, GAME.finishY, grid); // place on correct grid tile
+finish.play("idle", { loop: true }); // start animation
+finish.z = UI.gridElements; // ensure plotted on top of grid.
 
 // DEVELOPMENT MODE
 if (GAME.mode === "DEV") {

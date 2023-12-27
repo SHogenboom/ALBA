@@ -122,6 +122,8 @@ We want a basic styling to show where the game is located on the screen. We don'
 - [x] Ensure the game is shown in the middle of the screen
 - [x] Visualize where the game context is (e.g., with a background color)
 - [ ] Use custom font (because it is a canvas element this cannot be done through `css` styling)
+- [ ] Uniform sizes of sprites (e.g., 64 x 64)
+- [ ] Combine all assets (world tiles, player) to a spritesheet
 
 ## World
 
@@ -142,9 +144,13 @@ We start of with a boat, this doesn't really require any elaborate animations - 
 - [x] Add the player to the correct place on the grid
 - [ ] Prevent the player from moving off grid
 
-## Assets
+## Finish
 
-- [ ] Combine all assets (world tiles, player) to a spritesheet
+We start of with an animated starfish.
+
+- [x] Load the finish sprite (starfish)
+- [x] Add finish to grid
+- [x] Add basic animation (idle)
 
 ## Buttons
 

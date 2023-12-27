@@ -107,6 +107,14 @@ Downloaded assets from [Olga's Lab](https://www.olgaslab.com/graphics/viewgraphi
 
 ![mockup](../images/mockup.png)
 
+## User Interface
+
+The User Interface was based of Rekentuin's UI. The general dimensions of the game (1000, 550) will prove useful regardless of the environement in which the game is launched. However, Rekentuin has some UI elements which already take up the screen. These are the sidebar menu (right) and the display of time/coins (bottom). The remaining components of our game have to account for this 'lost' space.
+
+We currently fill the entire screen with different UI components. It's important to note that these will consider the 'outer' borders, actual elements will have to be placed within the containers. For easier computations all positions are determined from the top-left corner.
+
+The elements are mapped out in the `params.js` file and can be visualized on screen with the `showUI()` function.
+
 ## Styling
 
 We want a basic styling to show where the game is located on the screen. We don't use a fullscreen setup so that it will be easier / more logical to add other elements to the page (e.g., a menu, etc.).

@@ -11,8 +11,10 @@ export const GAME = {
   gridWidth: 5, // keep as two separate variables for easier looping.
   gridHeight: 5,
   tileSize: 64,
-  playerStart: [2, 4], // [x, y]
-  playerFinish: [4, 2], // [x, y]
+  playerStartX: 2, // keep as two separate variables for easier indexing.
+  playerStartY: 4,
+  finishX: 4,
+  finishY: 2,
   mode: "DEV", // DEV or PROD
 };
 
@@ -20,10 +22,8 @@ export const GAME = {
 // Kaboom has removed the use of 'layers', now works with z-index
 // Higher z-index means closer to the camera (plotted on top)
 export const LAYERS = {
-  background: 0,
-  ui: 1,
-  player: 2,
-  codeblocks: 2,
+  ui: -10,
+  gridElements: 10,
 };
 
 // USER INTERFACE

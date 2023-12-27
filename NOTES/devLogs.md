@@ -109,7 +109,7 @@ Downloaded assets from [Olga's Lab](https://www.olgaslab.com/graphics/viewgraphi
 
 ## User Interface
 
-The User Interface was based of Rekentuin's UI. The general dimensions of the game (1000, 550) will prove useful regardless of the environement in which the game is launched. However, Rekentuin has some UI elements which already take up the screen. These are the sidebar menu (right) and the display of time/coins (bottom). The remaining components of our game have to account for this 'lost' space.
+The User Interface was based of Rekentuin's UI. The general dimensions of the game (1000, 550) will prove useful regardless of the environment in which the game is launched. However, Rekentuin has some UI elements which already take up the screen. These are the sidebar menu (right) and the display of time/coins (bottom). The remaining components of our game have to account for this 'lost' space.
 
 We currently fill the entire screen with different UI components. It's important to note that these will consider the 'outer' borders, actual elements will have to be placed within the containers. For easier computations all positions are determined from the top-left corner.
 
@@ -139,6 +139,7 @@ We start of with a boat, this doesn't really require any elaborate animations - 
 - [x] Load the player sprite (boat)
 - [x] Add the player to the canvas
 - [x] Add a basic animation
+- [x] Add the player to the correct place on the grid
 - [ ] Prevent the player from moving off grid
 
 ## Assets

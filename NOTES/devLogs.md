@@ -105,6 +105,8 @@ Downloaded assets from [Olga's Lab](https://www.olgaslab.com/graphics/viewgraphi
 
 # Pseudo Implementation
 
+![mockup](../images/mockup.png)
+
 ## Styling
 
 We want a basic styling to show where the game is located on the screen. We don't use a fullscreen setup so that it will be easier / more logical to add other elements to the page (e.g., a menu, etc.).

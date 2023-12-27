@@ -21,6 +21,22 @@ export async function loadAssets(k) {
     },
   });
 
+  // FINISH - STARFISH
+  k.loadSprite("finish", "starfish.png", {
+    sliceX: 6,
+    sliceY: 5,
+    anims: {
+      idle: {
+        from: 0,
+        to: 19,
+      },
+      achieved: {
+        from: 20,
+        to: 30,
+      },
+    },
+  });
+
   // TILES
   let tileSize = 64; // size of the tiles in the spritesheet
 

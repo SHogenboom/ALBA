@@ -5,11 +5,11 @@ import { loadAssets } from "./utils/loadAssets.js"; // load assets (sprites, fon
 import { makePlayer } from "./entities/player.js"; // create player entity
 import { makeGrid } from "./entities/grid.js";
 import { showGridIndices } from "./utils/showGridIndices.js";
+import { showUI } from "./utils/showUI.js";
 
 // GLOBAL VARIABLES
-// 540 x 960 pixels, 16:9 ratio
-const gameWidth = 960;
-const gameHeight = 540;
+const gameWidth = 1000;
+const gameHeight = 550;
 const gridWidth = 5;
 const gridHeight = 5;
 const tileSize = 64;
@@ -23,7 +23,7 @@ const k = kaboom({
   canvas: document.querySelector("#game"),
   global: false,
   debug: true,
-  background: [255, 255, 255],
+  // background: [255, 255, 255],
 });
 
 // enter inspect mode
@@ -34,8 +34,8 @@ const k = kaboom({
 await loadAssets(k);
 
 // CREATE PLAYER
-// let player = k.add(makePlayer(k));
-// player.play("move", { loop: true });
+let player = k.add(makePlayer(k));
+player.play("move", { loop: true });
 
 // CREATE GRID
 let grid = makeGrid(k, gridWidth, gridHeight);
@@ -49,8 +49,10 @@ const gridLevel = k.addLevel(grid.layout, {
   tiles: grid.tiles,
 });
 
-// player.pos.x = startX * tileSize;
-// player.pos.y = startY * tileSize;
-// player.z = 1;
+player.pos.x = startX * tileSize;
+player.pos.y = startY * tileSize;
+player.z = 10;
 
 showGridIndices(k, gridWidth, gridHeight, tileSize);
+
+showUI(k);

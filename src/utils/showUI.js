@@ -30,6 +30,7 @@ export function showUI(k) {
     k.add([
       k.text(UIComponent, {
         size: UI.styling.fontSize,
+        font: "gameFont",
       }),
       k.color(UI.styling.color),
       k.pos(UI.components[UIComponent].pos),

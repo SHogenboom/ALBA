@@ -79,4 +79,8 @@ export async function loadAssets(k) {
       },
     });
   }
+
+  // FONTS
+  // Load a custom font from a .ttf file
+  k.loadFont("gameFont", "UbuntuMono-Bold.ttf");
 }

@@ -121,7 +121,7 @@ We want a basic styling to show where the game is located on the screen. We don'
 
 - [x] Ensure the game is shown in the middle of the screen
 - [x] Visualize where the game context is (e.g., with a background color)
-- [ ] Use custom font (because it is a canvas element this cannot be done through `css` styling)
+- [x] Use custom font (because it is a canvas element this cannot be done through `css` styling)
 - [ ] Uniform sizes of sprites (e.g., 64 x 64)
 - [ ] Combine all assets (world tiles, player) to a spritesheet
 

@@ -3,17 +3,20 @@
 
 import { GAME } from "./params.js";
 
-export function showGridIndices(k) {
-  for (let x = 1; x <= GAME.gridWidth; x++) {
-    for (let y = 1; y <= GAME.gridHeight; y++) {
+export function showGridIndices(k, grid) {
+  // DETERMINE where grid starts
+  let startX = grid.pos["x"];
+  let startY = grid.pos["y"];
+
+  for (let x = 0; x < GAME.gridWidth; x++) {
+    for (let y = 0; y < GAME.gridHeight; y++) {
       k.add([
-        k.pos(k.vec2(x * GAME.tileSize, y * GAME.tileSize)),
+        k.pos(k.vec2(startX + x * GAME.tileSize, startY + y * GAME.tileSize)),
         k.text(`x:${x}\ny:${y}`, {
           size: 14,
           align: "center",
         }),
         k.color(17, 23, 38),
-        k.z(1),
         k.anchor("center"),
       ]);
     }

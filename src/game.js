@@ -11,7 +11,8 @@ import { makeFinish } from "./entities/finish.js";
 import { makeGrid } from "./entities/grid.js";
 // DEVELOPMENT
 import { showGridIndices } from "./utils/showGridIndices.js";
-import { createUI, showUI } from "./utils/showUI.js";
+import { createUI, showUI } from "./entities/UI.js";
+import { showQuestion } from "./entities/question.js";
 
 // CREATE GAME
 const k = kaboom({
@@ -23,12 +24,14 @@ const k = kaboom({
   // background: [255, 255, 255],
 });
 
-// Create where the different components should be on the screen
-createUI(k);
-
 // LOAD ASSETS
 // wait for assets to load before continuing
 await loadAssets(k);
+
+// INITIALIZE UI
+// Create invisible boxes which position the components on screen
+// Use showUI (below) to make them visible.
+createUI(k);
 
 // CREATE GRID
 // Define the grid / tile structure
@@ -56,6 +59,10 @@ let finish = k.add(makeFinish(k)); // initialize, but does not show yet
 finish.pos = convertGridToCanvasPos(GAME.finishX, GAME.finishY, grid); // place on correct grid tile
 finish.play("idle", { loop: true }); // start animation
 finish.z = UI.gridElements; // ensure plotted on top of grid.
+
+// QUESTION
+// Show the question in the correct place on the canvas
+showQuestion(k);
 
 // DEVELOPMENT MODE
 if (GAME.mode === "DEV") {

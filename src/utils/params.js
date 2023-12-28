@@ -8,14 +8,16 @@
 export const GAME = {
   width: 1000,
   height: 550,
+  tileSize: 64,
+  mode: "DEV", // DEV or PROD
+  question: "How to get to the starfish?",
+  // TODO: MAKE VARIABLE TO 'ITEM'
   gridWidth: 5, // keep as two separate variables for easier looping.
   gridHeight: 5,
-  tileSize: 64,
   playerStartX: 2, // keep as two separate variables for easier indexing.
   playerStartY: 4,
   finishX: 4,
   finishY: 2,
-  mode: "DEV", // DEV or PROD
 };
 
 // LAYERS
@@ -77,7 +79,7 @@ UI.components["codeblocks"] = {
   pos: [margin, UI.components.grid.height + margin],
 };
 
-UI.components["question"] = {
+UI.components["questionBox"] = {
   width:
     GAME.width -
     UI.components.sidebar.width -
@@ -88,7 +90,7 @@ UI.components["question"] = {
 };
 
 UI.components["algorithmUtils"] = {
-  width: UI.components.question.width,
+  width: UI.components.questionBox.width,
   height: 100,
   pos: [
     UI.components.grid.width + margin,
@@ -97,16 +99,16 @@ UI.components["algorithmUtils"] = {
 };
 
 UI.components["algorithm"] = {
-  width: UI.components.question.width,
+  width: UI.components.questionBox.width,
   height:
     GAME.height -
-    UI.components.question.height -
+    UI.components.questionBox.height -
     UI.components.coins.height -
     UI.components.algorithmUtils.height -
     4 * margin,
   pos: [
     UI.components.grid.width + margin,
-    UI.components.question.height + 2 * margin,
+    UI.components.questionBox.height + 2 * margin,
   ],
 };
 

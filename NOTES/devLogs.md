@@ -133,6 +133,7 @@ The `player` will move in a 'world' that consists of a fixed size grid.
 - [x] Load the actual tiles as Sprites
 - [x] Add the tiles as a grid to the canvas (e.g., 5 x 5)
 - [ ] Add boundaries so that a player would not be able to fall/move off grid
+- [ ] Make the start/finish positions variable to 'item' information.
 
 ## Player
 

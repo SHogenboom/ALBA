@@ -1,15 +1,16 @@
 // GOAL
 // Add small greyed-out texts to the grid to indicate the x and y indices of the tiles.
 
-import { GAME } from "./params.js";
+import { GameObj, KaboomCtx } from "kaboom";
+import { GAME, ITEM } from "../params.ts";
 
-export function showGridIndices(k, grid) {
+export function showGridIndices(k: KaboomCtx, grid: GameObj) {
   // DETERMINE where grid starts
-  let startX = grid.pos[0];
-  let startY = grid.pos[1];
+  const startX = grid.pos[0];
+  const startY = grid.pos[1];
 
-  for (let x = 0; x < GAME.gridWidth; x++) {
-    for (let y = 0; y < GAME.gridHeight; y++) {
+  for (let x = 0; x < ITEM.gridWidth; x++) {
+    for (let y = 0; y < ITEM.gridHeight; y++) {
       k.add([
         k.pos(k.vec2(startX + x * GAME.tileSize, startY + y * GAME.tileSize)),
         k.text(`x:${x}\ny:${y}`, {

@@ -2,7 +2,7 @@
 import kaboom from "kaboom"; // javascript library for making games
 import "./style.css"; // custom styling
 // UTILITIES
-import { GAME, UI } from "./utils/params.js"; // game parameters
+import { GAME, LAYERS, UI } from "./utils/params.js"; // game parameters
 import { loadAssets } from "./utils/loadAssets.js"; // load assets (sprites, fonts etc)
 import { convertGridToCanvasPos } from "./utils/convertToCanvasPos.js"; // convert grid coordinates to canvas position
 // ENTITIES
@@ -36,16 +36,37 @@ createUI(k);
 // CREATE GRID
 // Define the grid / tile structure
 let gridElements = makeGrid(k);
+
+// Extract UI details so that the grid can be placed in the center
+let gridBox = k.get("gridBox")[0];
+
 // Add as a level to the game
 const grid = k.addLevel(gridElements.layout, {
   // Size of the tiles
   tileWidth: GAME.tileSize,
   tileHeight: GAME.tileSize,
-  // Position relative to top-left corner of the canvas
+  // First position relative to top-left corner of the canvas
+  // Actual position can only be determined after the grid is created,
+  //  because then the size is known
   pos: k.vec2(GAME.tileSize, GAME.tileSize),
   // Map ASCII symbols to sprites
   tiles: gridElements.tiles,
 });
+
+// Position the grid in the center of the screen
+// NOTE; the position of the gridBox is determine from the top-left corner
+// NOTE; there appears to be no way to extract a level's size (grid)
+// So we instead do the computations.
+let gridBoxCenterX = gridBox.pos.x + gridBox.width / 2;
+let gridBoxCenterY = gridBox.pos.y + gridBox.height / 2;
+// The grid is build up from the top-left corner, but anchored in the middle of the tiles
+// For this reason, we need to offset by half the tilesize
+// NOTE: defining the position only works as array, not with named objects.
+grid.pos = [
+  gridBoxCenterX - (GAME.tileSize * GAME.gridWidth) / 2 + GAME.tileSize / 2,
+  gridBoxCenterY - (GAME.tileSize * GAME.gridHeight) / 2 + GAME.tileSize / 2,
+];
+grid.z = LAYERS.ui; // ensure plotted below players etc.
 
 // CREATE PLAYER
 let player = k.add(makePlayer(k)); // initialize, but does not show yet

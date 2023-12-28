@@ -7,8 +7,8 @@ import { GAME } from "./params.js";
 
 export function convertGridToCanvasPos(posX, posY, grid) {
   // DETERMINE where grid starts
-  let startX = grid.pos["x"];
-  let startY = grid.pos["y"];
+  let startX = grid.pos[0];
+  let startY = grid.pos[1];
 
   // Compute actual position from grid position
   let actualPosX = startX + GAME.tileSize * posX;

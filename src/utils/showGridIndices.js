@@ -5,8 +5,8 @@ import { GAME } from "./params.js";
 
 export function showGridIndices(k, grid) {
   // DETERMINE where grid starts
-  let startX = grid.pos["x"];
-  let startY = grid.pos["y"];
+  let startX = grid.pos[0];
+  let startY = grid.pos[1];
 
   for (let x = 0; x < GAME.gridWidth; x++) {
     for (let y = 0; y < GAME.gridHeight; y++) {

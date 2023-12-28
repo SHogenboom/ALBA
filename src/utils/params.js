@@ -25,7 +25,7 @@ export const GAME = {
 // Higher z-index means closer to the camera (plotted on top)
 export const LAYERS = {
   ui: -10,
-  gridElements: 10,
+  gridBoxElements: 10,
 };
 
 // USER INTERFACE
@@ -61,53 +61,53 @@ const UI = {
 
 // DEFINE NEW COMPONENTS
 // Because we reuse the values from fixed/previous components, we can only define them after the original components have been defined
-UI.components["grid"] = {
+UI.components["gridBox"] = {
   // half of left-over space; account for spacing of sidebar and margins
   width: (GAME.width - UI.components.sidebar.width - 2 * margin) / 2,
-  // account for spacing of sidebar, leave room for codeblocks (3/4 of vertical space) and margins
+  // account for spacing of sidebar, leave room for codeblocksBox (3/4 of vertical space) and margins
   height: ((GAME.height - UI.components.coins.height) / 4) * 3 - 3 * margin,
   pos: [margin, margin],
 };
 
-UI.components["codeblocks"] = {
-  width: UI.components.grid.width,
+UI.components["codeblocksBox"] = {
+  width: UI.components.gridBox.width,
   height:
     GAME.height -
     UI.components.coins.height -
-    UI.components.grid.height -
+    UI.components.gridBox.height -
     2 * margin,
-  pos: [margin, UI.components.grid.height + margin],
+  pos: [margin, UI.components.gridBox.height + margin],
 };
 
 UI.components["questionBox"] = {
   width:
     GAME.width -
     UI.components.sidebar.width -
-    UI.components.grid.width -
+    UI.components.gridBox.width -
     2 * margin,
   height: 100,
-  pos: [UI.components.grid.width + margin, margin],
+  pos: [UI.components.gridBox.width + margin, margin],
 };
 
-UI.components["algorithmUtils"] = {
+UI.components["algorithmBoxUtilsBox"] = {
   width: UI.components.questionBox.width,
   height: 100,
   pos: [
-    UI.components.grid.width + margin,
+    UI.components.gridBox.width + margin,
     GAME.height - UI.components.coins.height - 100 - margin,
   ],
 };
 
-UI.components["algorithm"] = {
+UI.components["algorithmBox"] = {
   width: UI.components.questionBox.width,
   height:
     GAME.height -
     UI.components.questionBox.height -
     UI.components.coins.height -
-    UI.components.algorithmUtils.height -
+    UI.components.algorithmBoxUtilsBox.height -
     4 * margin,
   pos: [
-    UI.components.grid.width + margin,
+    UI.components.gridBox.width + margin,
     UI.components.questionBox.height + 2 * margin,
   ],
 };

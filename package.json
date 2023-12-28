@@ -17,7 +17,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview --open",
     "deploy": "run-s build commit-website gh-pages",
-    "commit-website": "git add dist && git commit -m 'UPDATE website' && git push",
+    "commit-website": "git add dist -f && git commit -m 'UPDATE website' && git push",
     "gh-pages": "git subtree push --prefix dist origin gh-pages"
   },
   "devDependencies": {

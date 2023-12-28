@@ -11,7 +11,7 @@ import { makeFinish } from "./entities/finish.js";
 import { makeGrid } from "./entities/grid.js";
 // DEVELOPMENT
 import { showGridIndices } from "./utils/showGridIndices.js";
-import { showUI } from "./utils/showUI.js";
+import { createUI, showUI } from "./utils/showUI.js";
 
 // CREATE GAME
 const k = kaboom({
@@ -22,6 +22,9 @@ const k = kaboom({
   debug: GAME.mode === "DEV",
   // background: [255, 255, 255],
 });
+
+// Create where the different components should be on the screen
+createUI(k);
 
 // LOAD ASSETS
 // wait for assets to load before continuing
@@ -57,6 +60,6 @@ finish.z = UI.gridElements; // ensure plotted on top of grid.
 // DEVELOPMENT MODE
 if (GAME.mode === "DEV") {
   k.debug.inspect = true; // Kaboom debug mode
+  showUI(k); // visualize the UI components
   showGridIndices(k, grid); // for easier inspection of grid coordinates
-  showUI(k); // show where the different components are on the screen
 }

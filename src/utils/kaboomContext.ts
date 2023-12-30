@@ -1,5 +1,4 @@
 import kaboom from "kaboom"; // javascript library for making games
-import flexUIPlugin from "kaboom-flex-ui"; // to create UI components
 
 // CREATE GAME
 const k = kaboom({
@@ -9,7 +8,6 @@ const k = kaboom({
   global: false,
   debug: true,
   // background: [255, 255, 255],
-  plugins: [flexUIPlugin],
 });
 
 export default k;

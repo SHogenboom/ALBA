@@ -30,7 +30,6 @@
     "vite-plugin-top-level-await": "^1.4.1"
   },
   "dependencies": {
-    "kaboom": "^3000.1.17",
-    "kaboom-flex-ui": "^0.0.7"
+    "kaboom": "^3000.1.17"
   }
 }
